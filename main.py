@@ -93,10 +93,10 @@ data = {
 }
 
 
-@app.route('/')
+'''@app.route('/')
 def hello_world():
     dishes = data["dishes"]
-    return render_template("index.html", dishes=dishes)
+    return render_template("index.html", dishes=dishes)'''
 
 
 @app.route('/users', methods=['GET', 'POST'])
@@ -123,7 +123,25 @@ def locationFetch():
             if i != 0:
                 loc["data"].append(i)
         return jsonify(loc)
+    
+@app.route('/', methods=['GET', 'POST'])
+def Home():
+    return render_template("Home.html")
+
+@app.route('/Offer', methods=['GET', 'POST'])
+def Offer():
+    return render_template("Offer.html")
+
+@app.route('/Search', methods=['GET', 'POST'])
+def Search():
+    return render_template("Search.html")
+
+@app.route('/Blog', methods=['GET', 'POST'])
+def Blog():
+    return render_template("Blog.html")
+    
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port="8080")
+    app.run(debug=True)
+
