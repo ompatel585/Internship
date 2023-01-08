@@ -98,7 +98,20 @@ def hello_world():
     dishes = data["dishes"]
     return render_template("index.html", dishes=dishes)'''
 
+@app.route('/restaurant', methods=['GET','POST'])
+def restaurantPage():
+    data = {
+        "name" : "Pizza house",
+        "items": ["Pizza"],
+        "address": "Ahmedabad",
+        "time": "12:00 PM to 12:00 AM",
+        "about": "Station Bar is a one-stop destination for people who want to have a fun time with their families and friends. The eye-catching colorful decor just does not ends there. We have a spectacular outdoor seating for romantic evenings."
+    }
+    return render_template("restaurant.html", restaurant=data)
 
+    
+    
+    
 @app.route('/users', methods=['GET', 'POST'])
 def userFetch():
     if(request.method == 'GET'):
@@ -124,6 +137,8 @@ def locationFetch():
                 loc["data"].append(i)
         return jsonify(loc)
     
+
+    
 @app.route('/', methods=['GET', 'POST'])
 def Home():
     return render_template("Home.html")
@@ -143,5 +158,5 @@ def Blog():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host = "0.0.0.0", port = 8000)
 
