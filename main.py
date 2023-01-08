@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, render_template
+import json
 app = Flask(__name__)
 
 data = {
@@ -98,7 +99,7 @@ def hello_world():
     dishes = data["dishes"]
     return render_template("index.html", dishes=dishes)'''
 
-@app.route('/restaurant', methods=['GET','POST'])
+'''@app.route('/restaurant', methods=['GET','POST'])
 def restaurantPage():
     data = {
         "name" : "Pizza house",
@@ -108,7 +109,7 @@ def restaurantPage():
         "about": "Station Bar is a one-stop destination for people who want to have a fun time with their families and friends. The eye-catching colorful decor just does not ends there. We have a spectacular outdoor seating for romantic evenings."
     }
     return render_template("restaurant.html", restaurant=data)
-
+'''
     
     
     
@@ -138,6 +139,43 @@ def locationFetch():
         return jsonify(loc)
     
 
+with open('restaurant.json', 'r') as json_file:
+	json_load = json.load(json_file)
+ 
+restaurant1 = json_load['restaurant1']
+restaurant2 = json_load['restaurant2']
+restaurant3 = json_load['restaurant3']
+restaurant4 = json_load['restaurant4']
+restaurant5 = json_load['restaurant5']
+
+
+
+@app.route('/empDetails')
+def method_name():
+	return jsonify(restaurant1)
+
+
+
+@app.route('/res1')
+def res1():
+    return render_template('restaurant.html',restaurant=restaurant1)
+
+@app.route('/res2')
+def res2():
+    return render_template('restaurant.html',restaurant=restaurant2)
+
+@app.route('/res3')
+def res3():
+    return render_template('restaurant.html',restaurant=restaurant3)
+
+@app.route('/res4')
+def res4():
+    return render_template('restaurant.html',restaurant=restaurant4)  
+
+@app.route('/res5')
+def res5():
+    return render_template('restaurant.html',restaurant=restaurant5) 
+
     
 @app.route('/', methods=['GET', 'POST'])
 def Home():
@@ -159,3 +197,4 @@ def Blog():
 
 if __name__ == '__main__':
     app.run(debug=True, host = "0.0.0.0", port = 8000)
+
