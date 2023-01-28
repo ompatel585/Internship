@@ -110,9 +110,28 @@ def restaurantPage():
     }
     return render_template("restaurant.html", restaurant=data)
 '''
+@app.route('/SignUp',methods=['GET','POST'])
+def Signup():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        email = request.form.get('email')
+        print(username,email)
+        # listObj = []
+        filename = 'Signup.json'
+        with open(filename) as fp:
+            listObj = json.load(fp)
+        listObj['data'].append({"Name": username,"Email": email})
+        with open(filename, 'w') as json_file:
+            # json.dump(listObj, json_file, indent=4,  separators=(',',': '))
+            json_file.write(json.dumps(listObj))
+        # with open('Login.json', 'w') as f:
+        #     f.write(json.dumps([{"username":username, "password":password}]))
+        return render_template('Home.html')
+    
+    return render_template('SignUp.html')
     
     
-    
+
 @app.route('/users', methods=['GET', 'POST'])
 def userFetch():
     if(request.method == 'GET'):
@@ -192,9 +211,13 @@ def Search():
 @app.route('/Blog', methods=['GET', 'POST'])
 def Blog():
     return render_template("Blog.html")
+# @app.route('/SignUp', methods=['GET', 'POST'])
+# def SignUp():
+#     return render_template("SignUp.html")
     
 
 
 if __name__ == '__main__':
     app.run(debug=True, host = "0.0.0.0", port = 8000)
+
 
