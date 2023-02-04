@@ -115,21 +115,82 @@ def Signup():
     if request.method == 'POST':
         username = request.form.get('username')
         email = request.form.get('email')
+        contact = request.form.get('contact')
+        password = request.form.get('password')
         print(username,email)
         # listObj = []
         filename = 'Signup.json'
         with open(filename) as fp:
             listObj = json.load(fp)
-        listObj['data'].append({"Name": username,"Email": email})
-        with open(filename, 'w') as json_file:
-            # json.dump(listObj, json_file, indent=4,  separators=(',',': '))
-            json_file.write(json.dumps(listObj))
+        # if username in listObj['data']:
+        #     print("hello world")
+        #     return 'user already signed up'
+            
+        # else:
+        #     listObj['data'].append({"Name": username,"Email": email,"Contact": contact,"Password": password})
+        #     with open(filename, 'w') as json_file:
+        #         # json.dump(listObj, json_file, indent=4,  separators=(',',': '))
+        #         json_file.write(json.dumps(listObj))
+        flag = 0
+        userdata =  {}
+        for user in listObj['data']:
+            if username == user["Name"]:
+                flag = 1
+                userdata = user
+        if flag == 1:
+            return "user already exist"
+        else:
+            listObj['data'].append({"Name": username,"Email": email,"Contact": contact,"Password": password})
+            with open(filename, 'w') as json_file:
+                #json.dump(listObj, json_file, indent=4,  separators=(',',': '))
+                json_file.write(json.dumps(listObj))
+                
+        
+            
+                
+                
+            
         # with open('Login.json', 'w') as f:
         #     f.write(json.dumps([{"username":username, "password":password}]))
         return render_template('Home.html')
     
     return render_template('SignUp.html')
+ 
+@app.route('/SignIn',methods=['GET','POST'])
+def Signin():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        # email = request.form.get('email')
+        # contact = request.form.get('contact')
+        password = request.form.get('password')
+        print(username,password)
+        # listObj = []
+        filename = 'Signup.json'
+        with open(filename) as fp:
+            listObj = json.load(fp)
+        
+        
+        flag = 0
+        userdata =  {}
+        for user in listObj['data']:
+            if username == user["Name"]:
+                flag = 1
+                userdata = user
+        if flag == 1:
+            if username == user["Name"] and  password == user["Password"]:
+                return render_template('Home.html')
+                    
+            elif username == user["Name"] and  password != user["Password"]:
+                return "username and password don't match"
+            
+        
+            else:
+                return "user doesn't exist, please signup first"
+        
+        return render_template('Home.html')
     
+    return render_template('SignIn.html')
+     
     
 
 @app.route('/users', methods=['GET', 'POST'])
@@ -219,5 +280,3 @@ def Blog():
 
 if __name__ == '__main__':
     app.run(debug=True, host = "0.0.0.0", port = 8000)
-
-
