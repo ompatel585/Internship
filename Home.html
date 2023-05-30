@@ -21,8 +21,8 @@
     <div class="z-50 sticky top-0 bg-white shadow-lg pb-3">
         <div class="flex justify-between mb-2 ">
             <h1 class="text-orange-600 mr-4 mt-2 opacity-90 text-2xl font-bold ml-8">atoz</h1>
-            <div onmouseenter="showLocation('enter')" onmouseleave="showLocation('leave')" class="relative flex justify-between border-2 bg-gray-100 h-8 w-64 rounded-lg mt-2 mx-5">
-                <div class="flex">
+            <div onmouseenter="showLocation('enter')" onmouseleave="showLocation('leave')" class="relative flex justify-between border-2 bg-gray-100 h-8 w-64 rounded-lg mt-2 mx-auto">
+                <div class="flex ">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 m-1 mt-[5px]" viewBox="0 0 10 13">
                         <path fill="#666" fill-rule="nonzero" d="M5 0a5 5 0 0 1 5 5c0 1.826-.84 3.618-2.213 5.246C6.776 11.446 5.501 12.5 5 12.5c-.501 0-1.776-1.053-2.787-2.254C.84 8.618 0 6.826 0 5a5 5 0 0 1 5-5zm0 1.25A3.75 3.75 0 0 0 1.25 5c0 1.484.72 3.017 1.919 4.441.452.537.948 1.024 1.409 1.405.185.154.422.325.422.325s.263-.193.422-.325c.461-.38.957-.868 1.41-1.405C8.03 8.017 8.75 6.484 8.75 5A3.75 3.75 0 0 0 5 1.25zm0 1.875a1.875 1.875 0 1 1 0 3.75 1.875 1.875 0 0 1 0-3.75zm0 1.25a.625.625 0 1 0 0 1.25.625.625 0 0 0 0-1.25z"></path>
                     </svg>
@@ -40,6 +40,9 @@
                 </div> 
                 <div onmouseleave="showSubLocation('leave',this)" id="locationSub" class="hidden w-32 h-fit absolute top-7 left-28 p-2 bg-gray-100 ml-7 rounded-r-lg shadow-lg">
                 </div>
+            </div>
+            <div>
+                <h1 class="mr-5"><a href="/SignUp">SignUp</a> | <a href="/SignIn">SignIn</a></h1>
             </div>
         </div>
         <script>
@@ -90,16 +93,16 @@
         <!-- <section id="bottom-navigation" class="md:hidden block fixed inset-x-0 bottom-0 z-10 bg-white shadow"> // if shown only tablet/mobile-->
         <section id="bottom-navigation" class="block fixed inset-x-0 bottom-0 z-10 bg-white shadow">
             <div id="tabs" class="flex justify-between ">
-                <a href="#" class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center">
+                <a href="/" class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center">
                     <span class="tab tab-home block text-lg text-white bg-orange-400 py-2">Home</span>
                 </a>
-                <a href="offer.html" class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center">
+                <a href="/Offer" class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center">
                     <span class="tab tab-kategori block text-lg  hover:bg-orange-400 hover:text-white py-2">Offer</span>
                 </a>
-                <a href="#" class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center">
-                    <span class="tab tab-explore block text-lg  hover:bg-orange-400 hover:text-white py-2">Event</span>
+                <a href="/Search" class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center">
+                    <span class="tab tab-explore block text-lg  hover:bg-orange-400 hover:text-white py-2">Search</span>
                 </a>
-                <a href="#" class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center">
+                <a href="/Blog" class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center">
                     <span class="tab tab-whishlist block text-lg  hover:bg-orange-400 hover:text-white py-2">Blog</span>
                 </a>
             </div>
@@ -124,7 +127,35 @@
     </div>
     <div class="scroller overflow-x-auto flex mb-3 transition-all duration-300">
         <div class="flex-none ml-3 bg-white rounded-lg overflow-hidden">
-            <img class="w-48 h-48" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/awurei8ypqkafoqay9ym" alt="img3"></img>
+            <a href="/res1"><img class="w-48 h-48" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/awurei8ypqkafoqay9ym" alt="img3"></img></a>
+            <div class=" my-1 h-fit px-3 pb-1">
+                <h5 class="font-medium text-sm">Pizza house</h5>
+                <h6 class="text-xs text-gray-500">North Indian</h6>
+                <div class="flex justify-between">
+                    <h5 class="font-bold px-1 text-white bg-orange-400 text-sm">3.9</h5>
+                    <h5 class="font-medium text-sm">&#x2022;</h5>
+                    <h5 class="font-thin text-sm">23 MINS</h5>
+                    <h5 class="font-medium text-sm">&#x2022;</h5>
+                    <h5 class="font-thin text-sm">3.9</h5>
+                </div>
+            </div>
+        </div>
+        <div class="flex-none ml-3 bg-white rounded-lg overflow-hidden">
+            <a href="/res2"><img class="w-48 h-48" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/awurei8ypqkafoqay9ym" alt="img3"></img></a>
+            <div class=" my-1 h-fit px-3 pb-1">
+                <h5 class="font-medium text-sm">Pizza Hut</h5>
+                <h6 class="text-xs text-gray-500">North Indian</h6>
+                <div class="flex justify-between">
+                    <h5 class="font-bold px-1 text-white bg-orange-400 text-sm">3.9</h5>
+                    <h5 class="font-medium text-sm">&#x2022;</h5>
+                    <h5 class="font-thin text-sm">23 MINS</h5>
+                    <h5 class="font-medium text-sm">&#x2022;</h5>
+                    <h5 class="font-thin text-sm">3.9</h5>
+                </div>
+            </div>
+        </div>
+        <div class="flex-none ml-3 bg-white rounded-lg overflow-hidden">
+            <a href="/res3"><img class="w-48 h-48" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/awurei8ypqkafoqay9ym" alt="img3"></img></a>
             <div class=" my-1 h-fit px-3 pb-1">
                 <h5 class="font-medium text-sm">Yash Food</h5>
                 <h6 class="text-xs text-gray-500">North Indian</h6>
@@ -138,7 +169,7 @@
             </div>
         </div>
         <div class="flex-none ml-3 bg-white rounded-lg overflow-hidden">
-            <img class="w-48 h-48" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/awurei8ypqkafoqay9ym" alt="img3"></img>
+            <a href="/res4"><img class="w-48 h-48" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/awurei8ypqkafoqay9ym" alt="img3"></img></a>
             <div class=" my-1 h-fit px-3 pb-1">
                 <h5 class="font-medium text-sm">Yash Food</h5>
                 <h6 class="text-xs text-gray-500">North Indian</h6>
@@ -152,35 +183,7 @@
             </div>
         </div>
         <div class="flex-none ml-3 bg-white rounded-lg overflow-hidden">
-            <img class="w-48 h-48" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/awurei8ypqkafoqay9ym" alt="img3"></img>
-            <div class=" my-1 h-fit px-3 pb-1">
-                <h5 class="font-medium text-sm">Yash Food</h5>
-                <h6 class="text-xs text-gray-500">North Indian</h6>
-                <div class="flex justify-between">
-                    <h5 class="font-bold px-1 text-white bg-orange-400 text-sm">3.9</h5>
-                    <h5 class="font-medium text-sm">&#x2022;</h5>
-                    <h5 class="font-thin text-sm">23 MINS</h5>
-                    <h5 class="font-medium text-sm">&#x2022;</h5>
-                    <h5 class="font-thin text-sm">3.9</h5>
-                </div>
-            </div>
-        </div>
-        <div class="flex-none ml-3 bg-white rounded-lg overflow-hidden">
-            <img class="w-48 h-48" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/awurei8ypqkafoqay9ym" alt="img3"></img>
-            <div class=" my-1 h-fit px-3 pb-1">
-                <h5 class="font-medium text-sm">Yash Food</h5>
-                <h6 class="text-xs text-gray-500">North Indian</h6>
-                <div class="flex justify-between">
-                    <h5 class="font-bold px-1 text-white bg-orange-400 text-sm">3.9</h5>
-                    <h5 class="font-medium text-sm">&#x2022;</h5>
-                    <h5 class="font-thin text-sm">23 MINS</h5>
-                    <h5 class="font-medium text-sm">&#x2022;</h5>
-                    <h5 class="font-thin text-sm">3.9</h5>
-                </div>
-            </div>
-        </div>
-        <div class="flex-none ml-3 bg-white rounded-lg overflow-hidden">
-            <img class="w-48 h-48" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/awurei8ypqkafoqay9ym" alt="img3"></img>
+            <a href="/res5"><img class="w-48 h-48" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/awurei8ypqkafoqay9ym" alt="img3"></img></a>
             <div class=" my-1 h-fit px-3 pb-1">
                 <h5 class="font-medium text-sm">Yash Food</h5>
                 <h6 class="text-xs text-gray-500">North Indian</h6>
@@ -453,6 +456,7 @@
             })
             }
         }, 3000);
-    </script>  
+    </script> 
+     
 </body>
 </html>
